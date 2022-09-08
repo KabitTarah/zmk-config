@@ -58,6 +58,18 @@
 			key-positions = <40 49>;
 			bindings = <&bt BT_CLR>;
 		};
+
+		combo_bootloader_left {
+			timeout-ms = <50>;
+			key-positions = <40 31>;
+			bindings = <&bootloader>;
+		}
+
+		combo_bootloader_right {
+			timeout-ms = <50>;
+			key-positions = <49 32>;
+			bindings = <&bootloader>;
+		}
 	};
 	
 	macros {
@@ -166,7 +178,7 @@
 			bindings = <
 	&bt BT_SEL 1 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 4
 	&bt BT_SEL 2 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 5
-	&bt BT_SEL 3 &none &none &none &none &none &trans &bootloader    &bootloader &trans &none &none &none &none &none &bt BT_SEL 6  
+	&bt BT_SEL 3 &none &none &none &none &none &trans &trans              &trans &trans &none &none &none &none &none &bt BT_SEL 6  
 	                      &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
 			>;
 	    };
