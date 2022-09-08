@@ -2,29 +2,172 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ *
+ *
+ * Kabit's Kyria ZMK build for BT
  */
+
+#define COLEMAK 0
+#define LMOD  1
+#define LYR_D 2
+#define LYR_L 3
+#define LYR_R 4
+#define LYR_U 5
+#define BMOD  6
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | 0    | 1   | 2   | 3    | 4    | 5    |                                          | 6    | 7    | 8    | 9    | 10    | 11   |
+// | 12   | 13  | 14  | 15   | 16   | 17   |                                          | 18   | 19   | 20   | 21   | 22    | 23   |
+// | 24   | 25  | 26  | 27   | 28   | 29   | 30   | 31   |              | 32   | 33   | 34   | 35   | 36   | 37   | 38    | 39   |
+//                    | 40   | 41   | 42   | 43   | 44   |              | 45   | 46   | 47   | 48   | 49   |
+
 / {
+	combos {
+        compatible = "zmk,combos";
+		
+		combo_down {
+			timeout-ms = <50>;
+			key-positions = <30 43>;
+			bindings = <&mo LYR_D>;
+		};
+		
+		combo_left {
+			timeout-ms = <50>;
+			key-positions = <31 44>;
+			bindings = <&mo LYR_L>;
+		};
+		
+		combo_right {
+			timeout-ms = <50>;
+			key-positions = <32 45>;
+			bindings = <&mo LYR_R>;
+		};
+		
+		combo_up {
+			timeout-ms = <50>;
+			key-positions = <33 46>;
+			bindings = <&mo LYR_U>;
+		};
+
+		combo_bclear {
+			timeout-ms = <100>;
+			key-positions = <40 49>;
+			bindings = <&bt BT_CLR>;
+		};
+	};
+	
+	macros {
+	    um_a_mac: um_a_mac {
+			label = "um_a_mac";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			    = <&macro_press &kp LALT>
+				, <&macro_tap &kp U>
+				, <&macro_release &kp LALT>
+				, <&macro_tap &kp A>;
+		};
+
+	    um_o_mac: um_o_mac {
+			label = "um_o_mac";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			    = <&macro_press &kp LALT>
+				, <&macro_tap &kp U>
+				, <&macro_release &kp LALT>
+				, <&macro_tap &kp O>;
+		};
+
+	    esz_mac: esz_mac {
+			label = "esz_mac";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			    = <&macro_press &kp LALT>
+				, <&macro_tap &kp S>
+				, <&macro_release &kp LALT>
+		};
+
+	    um_u_mac: um_u_mac {
+			label = "um_u_mac";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			    = <&macro_press &kp LALT>
+				, <&macro_tap &kp U>
+				, <&macro_release &kp LALT>
+				, <&macro_tap &kp U>;
+		};
+	};
+
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+		colemak_layer { 
 			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
+	&kp 1 &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp 4
+	&kp 2 &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O    &kp 5
+	&kp 3 &kp Z &kp X &kp C &kp V &kp B &kp DOT   &mo LMOD          &mo LMOD &kp RALT  &kp K &kp M  &kp COMMA &kp DOT &kp APOS &kp 6
+	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC      &kp LGUI &kp SPACE &kp RET &kp GRAVE &mo BMOD
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
+
+		lmod_layer { 
+			bindings = <
+	&trans &trans &trans &trans &trans &trans                                                 &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                                 &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans                     &trans &trans &trans &trans &trans &trans &trans &trans
+	               &trans &kp LCTRL &kp LALT &mo LYR_D &mo LYR_L      &mo LYR_R &mo LYR_U &kp RALT &kp RCTRL &trans
+			>;
+		};
+
+		down_layer { 
+			bindings = <
+	&none &none &none &none &none &none                                                 &kp PG_UP &none    &kp UP &none     &none &none
+	&none &um_a_mac &um_o_mac &esz_mac &um_u_mac &none                                  &kp PG_DN &kp LEFT &kp UP &kp RIGHT &none &none
+	&none &none &none &none &none &none &trans &trans                &trans   &trans    &kp HOME  &kp END  &none  &none     &none &none
+	               &trans &trans &trans &trans &trans                &trans   &trans &trans &trans &trans
+			>;
+		};
+
+		left_layer { 
+			bindings = <
+	&none &kp F12 &kp F9 &kp F8 &kp F7 &none                                                 &kp KP_SLASH &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &none
+	&none &kp F11 &kp F6 &kp F5 &kp F4 &none                                                 &kp KP_DOT   &kp N4 &kp N5 &kp N6 &kp KP_MINUS    &none
+	&none &kp F10 &kp F3 &kp F2 &kp F1 &none &trans &trans                     &trans &trans &KP N0       &kp N1 &kp N2 &kp N2 &kp KP_PLUS     &kp KP_EQUAL
+	               &trans &trans &trans &trans &trans                &trans   &trans &trans &trans &trans
+			>;
+		};
+
+		right_layer {  // MACROS
+			bindings = <
+	&none &none &none &none &none &none                                                 &none &none &none &none &none &none
+	&none &none &none &none &none &none                                                 &none &none &none &none &none &none
+	&none &none &none &none &none &none &trans &trans                     &trans &trans &none &none &none &none &none &none  
+	               &trans &trans &trans &trans &trans                     &trans &trans &trans &trans &trans
+			>;
+	    };
+
+		up_layer {
+			bindings = <
+	&none &kp PRCNT &kp CARET &kp AMPS  &kp PIPE  &kp LBKT                              &kp RBKT &kp PLUS  &kp STAR &kp DLLR &kp TILDE &none
+	&none &kp QMARK &kp EXCL  &kp SLASH &kp BSLH  &kp LPAR                              &kp RPAR &kp EQUAL &kp DQT  &kp LT   &kp GT    &none
+	&none &kp AT    &KP HASH  &kp COLON &kp UNDER &kp LBRC &trans &trans  &trans &trans &kp RBRC &kp MINUS &kp SEMI &none    &none     &none
+	                                  &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+			>;
+	    };
+
+		bluetooth_layer {
+			bindings = <
+	&bt BT_SEL 1 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 4
+	&bt BT_SEL 2 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 5
+	&bt BT_SEL 3 &none &none &none &none &none &trans &trans              &trans &trans &none &none &none &none &none &bt BT_SEL 6  
+	                      &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
+			>;
+	    };
 	};
 };
