@@ -2,7 +2,7 @@
 if SHIELD_KYRIA_LEFT || SHIELD_KYRIA_REV2_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Kyria"
+	default "Kabit Kyria"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
