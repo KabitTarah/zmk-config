@@ -125,7 +125,7 @@
 	&kp N0 &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp N3
 	&kp N1 &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O    &kp N4
 	&kp N2 &kp Z &kp X &kp C &kp V &kp B &kp DOT   &mo LMOD          &mo LMOD &kp RALT  &kp K &kp M  &kp COMMA &kp DOT &kp APOS &kp N5
-	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC      &kp LGUI &kp SPACE &kp RET &kp GRAVE &mo BMOD
+	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC      &kp SPACE &kp LGUI &kp RET &kp GRAVE &mo BMOD
 			>;
 		};
 
