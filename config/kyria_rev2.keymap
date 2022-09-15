@@ -122,9 +122,9 @@
 
 		colemak_layer { 
 			bindings = <
-	&kp 1 &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp 4
-	&kp 2 &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O    &kp 5
-	&kp 3 &kp Z &kp X &kp C &kp V &kp B &kp DOT   &mo LMOD          &mo LMOD &kp RALT  &kp K &kp M  &kp COMMA &kp DOT &kp APOS &kp 6
+	&kp N0 &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp N3
+	&kp N1 &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O    &kp N4
+	&kp N2 &kp Z &kp X &kp C &kp V &kp B &kp DOT   &mo LMOD          &mo LMOD &kp RALT  &kp K &kp M  &kp COMMA &kp DOT &kp APOS &kp N5
 	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC      &kp LGUI &kp SPACE &kp RET &kp GRAVE &mo BMOD
 			>;
 		};
@@ -141,7 +141,7 @@
 		down_layer { 
 			bindings = <
 	&none &none &none &none &none &none                                                 &kp PG_UP &none    &kp UP &none     &none &none
-	&none &um_a_mac &um_o_mac &esz_mac &um_u_mac &none                                  &kp PG_DN &kp LEFT &kp UP &kp RIGHT &none &none
+	&none &um_a_mac &um_o_mac &esz_mac &um_u_mac &none                                  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none &none
 	&none &none &none &none &none &none &trans &trans                &trans   &trans    &kp HOME  &kp END  &none  &none     &none &none
 	               &trans &trans &trans &trans &trans                &trans   &trans &trans &trans &trans
 			>;
@@ -151,7 +151,7 @@
 			bindings = <
 	&none &kp F12 &kp F9 &kp F8 &kp F7 &none                                                 &kp KP_SLASH &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &none
 	&none &kp F11 &kp F6 &kp F5 &kp F4 &none                                                 &kp KP_DOT   &kp N4 &kp N5 &kp N6 &kp KP_MINUS    &none
-	&none &kp F10 &kp F3 &kp F2 &kp F1 &none &trans &trans                     &trans &trans &kp N0       &kp N1 &kp N2 &kp N2 &kp KP_PLUS     &kp KP_EQUAL
+	&none &kp F10 &kp F3 &kp F2 &kp F1 &none &trans &trans                     &trans &trans &kp N0       &kp N1 &kp N2 &kp N3 &kp KP_PLUS     &kp KP_EQUAL
 	               &trans &trans &trans &trans &trans                &trans   &trans &trans &trans &trans
 			>;
 		};
@@ -176,9 +176,9 @@
 
 		bluetooth_layer {
 			bindings = <
+	&bt BT_SEL 0 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 3
 	&bt BT_SEL 1 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 4
-	&bt BT_SEL 2 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 5
-	&bt BT_SEL 3 &none &none &none &none &none &trans &trans              &trans &trans &none &none &none &none &none &bt BT_SEL 6  
+	&bt BT_SEL 2 &none &none &none &none &none &trans &trans              &trans &trans &none &none &none &none &none &bt BT_SEL 5  
 	                      &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
 			>;
 	    };
