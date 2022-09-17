@@ -124,8 +124,8 @@
 			bindings = <
 	&mo LYR_U &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &mo LYR_U
 	&mo LYR_D &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O    &mo LYR_D
-	&mo LYR_L &kp Z &kp X &kp C &kp V &kp B &kp DOT   &mo LMOD          &mo LMOD &kp RALT  &kp K &kp M  &kp COMMA &kp DOT &kp APOS &mo LYR_L
-	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC      &kp SPACE &kp LGUI &kp RET &kp GRAVE &mo BMOD
+	&mo LYR_L &kp Z &kp X &kp C &kp V &kp B  &kp LCTRL &mo LMOD         &mo LMOD &kp RALT  &kp K &kp M  &kp COMMA &kp DOT &kp APOS &mo LYR_L
+	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC         &kp SPACE &kp LGUI  &kp RET &kp GRAVE &mo BMOD
 			>;
 		};
 
