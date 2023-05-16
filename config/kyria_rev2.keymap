@@ -75,7 +75,7 @@
 		combo_toggle_btout {
 			timeout-ms = <50>;
 			key-positions = <40 30>;
-			bindings = <&out OUT_TOG>
+			bindings = <&out OUT_TOG>;
 		};
 	};
 	
