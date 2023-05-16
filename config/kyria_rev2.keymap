@@ -18,6 +18,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | 0    | 1   | 2   | 3    | 4    | 5    |                                          | 6    | 7    | 8    | 9    | 10    | 11   |
@@ -69,6 +70,12 @@
 			timeout-ms = <50>;
 			key-positions = <49 32>;
 			bindings = <&bootloader>;
+		};
+		
+		combo_toggle_btout {
+			timeout-ms = <50>;
+			key-positions = <40 30>;
+			bindings = <&out OUT_TOG>
 		};
 	};
 	
