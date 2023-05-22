@@ -127,7 +127,8 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		colemak_layer { 
+		colemak_layer {
+			label = "colemak";
 			bindings = <
 	&mo LYR_U &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &mo LYR_U
 	&mo LYR_D &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O    &mo LYR_D
@@ -136,7 +137,8 @@
 			>;
 		};
 
-		lmod_layer { 
+		lmod_layer {
+		        label = "select";
 			bindings = <
 	&tog LYR_U &trans &trans &trans &trans &trans                                                 &trans &trans &trans &trans &trans &tog LYR_U
 	&tog LYR_D &trans &trans &trans &trans &trans                                                 &trans &trans &trans &trans &trans &tog LYR_D
@@ -145,7 +147,8 @@
 			>;
 		};
 
-		down_layer { 
+		down_layer {
+		        label = "Nav-D";
 			bindings = <
 	&none      &none &none &none &none &none                                                 &kp PG_UP &none    &kp UP   &none     &none &none
 	&tog LYR_D &um_a_mac &um_o_mac &esz_mac &um_u_mac &none                                  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none &tog LYR_D
@@ -155,6 +158,7 @@
 		};
 
 		left_layer { 
+			label = "Num-L";
 			bindings = <
 	&none      &kp F12 &kp F9 &kp F8 &kp F7 &none                                                 &kp KP_SLASH &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &none
 	&none      &kp F11 &kp F6 &kp F5 &kp F4 &none                                                 &kp KP_DOT   &kp N4 &kp N5 &kp N6 &kp KP_MINUS    &none
@@ -164,6 +168,7 @@
 		};
 
 		right_layer {  // MACROS
+			label = "Macro-R";
 			bindings = <
 	&none &none &none &none &none &none                                                 &none &none &none &none &none &none
 	&none &none &none &none &none &none                                                 &none &none &none &none &none &none
@@ -173,6 +178,7 @@
 	    };
 
 		up_layer {
+			label = "Sym-U"
 			bindings = <
 	&tog LYR_U &kp PRCNT &kp CARET &kp AMPS  &kp PIPE  &kp LBKT                              &kp RBKT &kp PLUS  &kp STAR &kp DLLR &kp TILDE &tog LYR_U
 	&none      &kp QMARK &kp EXCL  &kp SLASH &kp BSLH  &kp LPAR                              &kp RPAR &kp EQUAL &kp DQT  &kp LT   &kp GT    &none
@@ -182,6 +188,7 @@
 	    };
 
 		bluetooth_layer {
+			label = "BT";
 			bindings = <
 	&bt BT_SEL 0 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 3
 	&bt BT_SEL 1 &none &none &none &none &none                                          &none &none &none &none &none &bt BT_SEL 4
