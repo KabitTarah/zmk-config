@@ -178,7 +178,7 @@
 	    };
 
 		up_layer {
-			label = "Sym-U"
+			label = "Sym-U";
 			bindings = <
 	&tog LYR_U &kp PRCNT &kp CARET &kp AMPS  &kp PIPE  &kp LBKT                              &kp RBKT &kp PLUS  &kp STAR &kp DLLR &kp TILDE &tog LYR_U
 	&none      &kp QMARK &kp EXCL  &kp SLASH &kp BSLH  &kp LPAR                              &kp RPAR &kp EQUAL &kp DQT  &kp LT   &kp GT    &none
