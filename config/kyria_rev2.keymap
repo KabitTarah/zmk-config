@@ -128,7 +128,7 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
-			    = <&macro_tap &kp p &kp r &kp i &kp n &kp t &kp LPAR>,
+			    = <&macro_tap &kp P &kp R &kp I &kp N &kp T &kp LPAR>,
 			      <&macro_tap &kp DQT &kp STAR &kp DQT>,
 			      <&macro_tap &kp STAR &kp N2 &kp N5 &kp RPAR>;
 		};
