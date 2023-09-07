@@ -17,6 +17,8 @@ include:
     shield: kyria_rev2_left
   - board: nice_nano_v2
     shield: kyria_rev2_right
+  - board: nice_nano_v2
+    shield: settings_reset
   - board: sparkfun_pro_micro_rp2040
     shield: kyria_rev3_left
   - board: sparkfun_pro_micro_rp2040
