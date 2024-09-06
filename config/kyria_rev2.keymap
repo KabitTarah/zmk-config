@@ -8,13 +8,13 @@
  */
 
 #define COLEMAK 0
-#define LMOD  1
-#define LYR_D 2
-#define LYR_L 3
-#define LYR_R 4
-#define LYR_U 5
-#define BMOD  6
-#define GAMING 7
+#define GAMING 1
+#define LMOD  2
+#define LYR_D 3
+#define LYR_L 4
+#define LYR_R 5
+#define LYR_U 6
+#define BMOD  7
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -160,6 +160,16 @@
 			>;
 		};
 
+		gaming_layer {
+			label ="gaming";
+			bindings = <
+	&mo LYR_U &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp SEMI &mo LYR_U
+	&mo LYR_D &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp P    &mo LYR_D
+	&mo LYR_L &kp Z &kp X &kp C &kp V &kp B  &kp LCTRL &mo LALT         &mo RALT &kp RCTRL &kp N &kp M  &kp COMMA &kp DOT &kp APOS &mo LYR_L
+	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC          &kp LGUI &kp SPACE &kp RET &kp GRAVE &mo BMOD
+			>;
+	};
+
 		lmod_layer {
 		        label = "select";
 			bindings = <
@@ -193,10 +203,10 @@
 		right_layer {  // MACROS
 			label = "Macro-R";
 			bindings = <
-	&none &none &none &none &none &none                                                 &none &none &none &none &none &none
-	&none &none &none &none &none &none                                                 &none &none &none &none &none &none
-	&none &none &none &pydebug &none &none &trans &trans                     &trans &trans &none &none &none &none &none &none  
-	               &trans &trans &trans &trans &trans                     &trans &trans &trans &trans &trans
+	&tog GAMING &none &none &none    &none &none                                            &none &none &none &none &none &none
+	&none       &none &none &none    &none &none                                            &none &none &none &none &none &none
+	&none       &none &none &pydebug &none &none &trans &trans                &trans &trans &none &none &none &none &none &none  
+	                        &trans &trans &trans &trans &trans                &trans &trans &trans &trans &trans
 			>;
 	    };
 
@@ -219,15 +229,5 @@
 	                      &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
 			>;
 	    };
-	};
-
-		gaming_layer {
-			label ="gaming";
-			bindings = <
-	&mo LYR_U &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp SEMI &mo LYR_U
-	&mo LYR_D &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp P    &mo LYR_D
-	&mo LYR_L &kp Z &kp X &kp C &kp V &kp B  &kp LCTRL &mo LALT         &mo RALT &kp RCTRL &kp N &kp M  &kp COMMA &kp DOT &kp APOS &mo LYR_L
-	               &mo BMOD &kp TAB &kp BSPC &kp LSHFT &kp ESC          &kp LGUI &kp SPACE &kp RET &kp GRAVE &mo BMOD
-			>;
 	};
 };
