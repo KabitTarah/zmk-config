@@ -30,17 +30,16 @@
 / {
 	combos {
         compatible = "zmk,combos";
-
 		
 		combo_colemak {
 			timeout-ms = <50>;
-			key-positions = <0 24>;
+			key-positions = <1 25>;
 			bindings = <&to COLEMAK>;
 		};
 
 		combo_gaming {
 			timeout-ms = <50>;
-			key-positions = <0 11>;
+			key-positions = <1 5>;
 			bindings = <&to GAMING>;
 		};
 
